@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="icon" type="icon/x-icon" href="/src/images/bug.jpg">
+
+    <title>Bug Genie-Update project</title>
+
+    <style>
+        body {
+            background-image: url('/src/images/bug_genie_opac.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            background-color: #d9dfeb;
+            opacity:0.6;
+            font-family: arial, sans-serif;
+            text-align: center;
+            border-collapse: collapse;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+          
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }           
+
+        .topnav {
+          overflow: hidden;
+          padding-left:16px
+        }
+
+        .topnav a {
+          float: left;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+        }
+
+        a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #42526e;
+          color: white;
+        }
+        .new_project {
+          float: left;
+          background-color: #42526e;
+          color: white;
+          /* color: #212a3a; */
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+ 
+        }
+        .update_project_mate {
+          /* float: left; */
+          /* background-color: #42526e; */
+          color: white;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+ 
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h1 style="text-align: center;">BUG Genie</h1>
+    <h2 style="padding-left:16px">Admin port</h2>
+    {{range.}}
+    <div class="topnav">
+        <a href="/home_redirect">Home</a>
+        
+        <a class="active" >Update project</a>
+        <a href="/update_mates/?pid={{.P_id}}"    >Update project Mates</a>
+        <a href="/add_pro_member/?pid={{.P_id}}"  >Add Member</a>
+        
+    </div>{{end}}
+    
+<br><br><br>
+    <p>Please fill in this form to Update a Existing project.</p>
+
+    <fieldset><legend>Update project</legend>
+    <form action="/edit_project" method="POST"  autocomplete="off">
+        <div class="container">
+          <!-- <hr> -->
+       {{range.}}
+          <label for="p_name"><b>Name of Project</b></label>
+          <input type="text" placeholder="Enter Name of Project" name="p_name" id ="p_name" value="{{.P_name}}" required>
+          
+          <br><br>
+          <label for="p_key"><b>Key for Project</b></label>
+          <input type="text" placeholder="Enter key for Project" name="p_key" id="p_key" value="{{.P_key}}" required>
+          
+          <br><br>
+          <label for="p_id"><b>Project ID</b></label>
+          <input type="text" placeholder="Enter Project ID" name="p_id" id="p_id" value="{{.P_id}}" readonly>
+
+          <br><br>
+          <label for="p_type"><b>Type of Project</b></label>
+          <input type="text" placeholder="Enter Employee ID" name="p_type" id="p_type" value="{{.P_type}}" required>
+
+          <br><br>
+          <label for="p_lead"><b>Project Lead</b></label>
+          <input type="text" placeholder="Enter the emp_id of Lead" name="p_lead" id="p_lead" value="{{.P_lead}}" required>
+      
+          <br><br>
+          {{end}}
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" onclick="location.href = '/home_redirect';">Cancel</button>
+            <button type="submit" class="signupbtn">Update</button>
+          </div>    
+        </div>
+      </form>
+    </fieldset>
+        <!-- </table> -->
+</body>
+</html>
+    <!-- <p>Please fill in this form to create a New project.</p> -->
+<!--  -->
+    <!-- <form action="/edit_project" method="POST"  autocomplete="off"> -->
+        <!-- <div class="container"> -->
+          <!-- <hr> -->
+      <!--  -->
+          <!-- <label for="p_name"><b>Name of Project</b></label> -->
+          <!-- <input type="text" placeholder="Enter Name of Project" name="p_name" id ="p_name"  value="{{.P_name}}" required> -->
+          <!--  -->
+          <!-- <br><br> -->
+          <!-- <label for="p_key"><b>Key for Project</b></label> -->
+          <!-- <input type="text" placeholder="Enter key for Project" name="p_key" id="p_key" value="{{.P_key}}" required> -->
+          <!--  -->
+          <!-- <br><br> -->
+          <!-- <label for="p_id"><b>Project ID</b></label> -->
+          <!-- <input type="text" placeholder="Enter Project ID" name="p_id" id="p_id" value="{{.P_id}}" readonly> -->
+<!--  -->
+          <!-- <br><br> -->
+          <!-- <label for="p_type"><b>Type of Project</b></label> -->
+          <!-- <input type="text" placeholder="Enter Employee ID" name="p_type" id="p_type" value="{{.P_type}}" required> -->
+<!--  -->
+          <!-- <br><br> -->
+          <!-- <label for="p_lead"><b>Project Lead</b></label> -->
+          <!-- <input type="text" placeholder="Enter the emp_id of Lead" name="p_lead" id="p_lead" value="{{.P_lead}}" required> -->
+      <!--  -->
+      <!--  -->
+          <!-- <div class="clearfix"> -->
+            <!-- <button type="button" class="cancelbtn" onclick="location.href = 'admin_home.html';">Cancel</button> -->
+            <!-- <button type="submit" class="signupbtn">Create</button> -->
+          <!-- </div>     -->
+        <!-- </div> -->
+      <!-- </form> -->
+<!--  -->
+<!--  -->
+<!-- </body> -->
+<!-- </html> -->
+
+<!-- <a href="/project_list">Projects</a> -->
+        <!-- <a href="bug_listing.html">Tickets</a> -->
+        <!-- <a href="/create_bug">Create Tickets</a> -->
+        <!-- <a href="#contact">Create Ticket</a> -->
+
+
+        <!-- <br><a class="new_project" href="/createproject">New project</a> -->
+    <!-- {{range.}} -->
+    <!-- <br><a href="/update_mates/?pid={{.P_id}}"  class="update_project_mate"  >Update project Mates</a> -->
+    <!-- <a href="/add_pro_member/?pid={{.P_id}}"  class="update_project_mate">Add Member</a>{{end}} -->

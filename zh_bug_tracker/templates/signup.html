@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/x-icon" href="/src/images/bug.jpg">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <style>
+        #body{
+        border: 2px rgb(99, 71, 255);
+        width: max-content;
+        }
+        #id1{
+        color:rgb(247, 10, 10) ;
+        border: 5px rgb(99, 71, 255) ;
+        width: max-content;
+        background-color: rgb(252, 244, 244);
+        }
+        input{
+            color: #f71e1e;
+        }
+    </style> -->
+    <title>Bug Genie-Home</title>
+
+
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 5px 0;
+  /* display: inline-block; */
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  /* margin: 8px 0; */
+  border: none;
+  cursor: pointer;
+  /* width: 100%; */
+  /* opacity: 0.9; */
+}
+
+/* button:hover {
+  opacity:1;
+} */
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  /* padding: 14px 20px; */
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  /* display: table; */
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+/* @media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  } */
+/* } */
+</style>
+</head>
+<body>
+    <form action="/signup_user_registration" method="POST" style="border:1px solid #ccc" autocomplete="off">
+        <div class="container">
+          <h1 style="text-align: center;">BUG Genie</h1>
+          <h2>Sign Up</h2>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+      
+          <label for="ename"><b>Name of Employee</b></label>
+          <input type="text" placeholder="Enter Name of Employee" name="emp_name" id ="ename" required>
+          
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="emp_email" id="email" required>
+
+          <label for="emp-id"><b>Employee ID</b></label>
+          <input type="text" placeholder="Enter Employee ID" name="emp_id" id="emp-id" required>
+
+          <label for="e_psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="emp_psw" id="e_psw" required>
+          
+          <p>By creating an account you agree to our <a href="/terms_condition" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" onclick="location.href = '/';">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>    
+        </div>
+      </form>
+</body>
+</html>
+
+
+<!-- <center> -->
+    <!-- <div class="div"> -->
+    <!-- <form action = "/process" method = "GET"> -->
+        <!-- <img src="Bug_genie_icon.jpeg"  width="250" height="250"> -->
+        <!-- <h1>BUG Genie</h1> -->
+        <!-- <label for = "fer"> First Name </label> -->
+        <!-- <input type = "text" placeholder="First Name" name = "firster" id = "fer"><br> -->
+        <!-- <label for = "ler"> Last Name </label> -->
+        <!-- <input type = "text" placeholder="Last Name" name = "laster" id = "ler"><br> -->
+        <!-- <input type = "submit"> -->
+    <!-- </form> -->
+<!-- </div> -->
+<!-- </center> -->

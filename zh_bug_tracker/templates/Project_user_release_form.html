@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/x-icon" href="/src/images/bug.jpg">
+    <title>Bug-Genie-Release project Mate</title>
+  
+    <style>
+      body {
+          background-image: url('/src/images/bug_genie_opac.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      .topnav {
+            overflow: hidden;
+            padding-left:16px
+            /* background-color: #fff; */
+          }
+  
+          .topnav a {
+            float: left;
+            color: #212a3a;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            border-color: #42526e;
+          }
+  
+          a:hover {
+            background-color: #ddd;
+            color: black;
+          }
+  
+          .topnav a.active {
+            background-color: #42526e;
+            color: white;
+          }
+          .new_project {
+            /* float: left; */
+            /* color: white; */
+            color: #212a3a;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            border-color: #42526e;
+   
+          }
+          table {
+              background-color: #d9dfeb;
+              opacity:0.6;
+              font-family: arial, sans-serif;
+              text-align: center;
+              border-collapse: collapse;
+              width: 100%;
+              margin-left: auto;
+              margin-right: auto;
+            /* display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray; */
+          }
+          td, th {
+              border: 1px solid #dddddd;
+              /* text-align: center; */
+              padding: 8px;
+          }  
+         
+          
+      </style>
+
+  
+</head>
+<body>
+    <h1 style="text-align: center;">BUG Genie</h1>
+    <h2 style="padding-left:16px">User port</h2>
+    <div class="topnav">
+        <a href="/home_redirect">Home</a>
+        <!-- <a href="/project_list">Projects</a> -->
+        <!-- <a href="bug_listing.html">Tickets</a> -->
+        <!-- <a href="/create_bug">Create Tickets</a> -->
+        <a href="#"  class="active"  >Request project Release</a>
+
+    </div>
+
+    <br><br><br>
+    <h2>Please fill in this form to Request a Release in the project.</h2>
+
+    <fieldset><legend>Project Release Request</legend>
+    <form action="/project_release_form" autocomplete="off">
+        <div class="container">
+          <!-- <hr> -->
+       {{range.}}
+          <!-- <label for="pm_id"><b>Employee ID</b></label> -->
+          <input type="hidden" placeholder="Project mate ID" name="pm_id" id ="pm_id" value="{{.PM_id}}" readonly>
+          <br><br>
+              
+          <label for="emp_id"><b>Employee ID</b></label>
+          <input type="text" placeholder="Employee ID" name="emp_id" id ="emp_id" value="{{.P_empid}}" readonly>
+          <br><br>
+
+          <label for="p_name"><b>Name of Project</b></label>
+          <input type="text" placeholder="Enter Name of Project" name="p_name" id ="p_name" value="{{.P_name}}" readonly>
+          
+          <br><br>
+          <label for="p_key"><b>Key for Project</b></label>
+          <input type="text" placeholder="Enter key for Project" name="p_key" id="p_key" value="{{.P_key}}" readonly>
+          
+          <br><br>
+          <label for="p_id"><b>Project ID</b></label>
+          <input type="text" placeholder="Enter Project ID" name="p_id" id="p_id" value="{{.P_id}}" readonly>
+
+          <br><br>
+          <label for="p_type"><b>Type of Project</b></label>
+          <input type="text" placeholder="Enter Employee ID" name="p_type" id="p_type" value="{{.P_type}}" readonly>
+
+          <br><br>
+          <label for="p_lead"><b>Project Lead</b></label>
+          <input type="text" placeholder="Enter the emp_id of Lead" name="p_lead" id="p_lead" value="{{.P_empname}}" readonly>
+      
+          <br><br>
+          <label for="reason"><b>Reason for Release</b></label>
+          <input type="text" placeholder="Enter the Reason for Release" name="reason" id="reason"  required>
+      
+          <br><br>
+          <!-- <label for="status"><b>status</b></label> -->
+          <input type="hidden" placeholder="Release Status" name="status" id="status" value="Release Reqeusted" readonly>
+      
+          <br><br>
+          {{end}}
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" onclick="location.href = '/home_redirect';">Cancel</button>
+            <button type="submit" class="signupbtn">Request</button>
+          </div>    
+        </div>
+      </form>
+    </fieldset>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<fieldset><legend>Project Release Request</legend>
+  <form action="/project_release_form" method="GET"  autocomplete="off">
+      <div class="container">
+        <p>project release form</p>
+
+     
+       
+      </div>
+    </form>
+  </fieldset>
+
+</body>
+</html> -->

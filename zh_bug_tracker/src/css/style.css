@@ -1,0 +1,17 @@
+#id1{
+    color: 5px rgb(216, 38, 38) ;
+    margin:0 auto;
+    border: 5px rgb(99, 71, 255) dotted;
+    width: max-content;
+    background-color: rgb(124, 235, 201);
+}
+body{
+    background-image:linear-gradient(rgba(255, 255, 255, 0.75),rgba(255, 255, 255, 0.75))url(bug1.jpg);
+    background-image:url(download.jpeg);
+    background-color: #000000;
+    opacity: 1;
+    /* background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)) url(bug-report-icon.webp)); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+

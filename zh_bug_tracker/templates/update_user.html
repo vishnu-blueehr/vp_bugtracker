@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="icon/x-icon" href="/src/images/bug.jpg">
+    <title>Bug Genie- User update</title>
+    <style>
+        body {
+            background-image: url('/src/images/bug_genie_opac.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .topnav a {
+          float: left;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+        }
+
+        a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #42526e;
+          color: white;
+        }
+        .new_project {
+          float: left;
+          background-color: #42526e;
+          color: white;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+ 
+        }
+        .update_project_mate {
+          /* float: left; */
+          /* background-color: #42526e; */
+          color: white;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+ 
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">BUG Genie</h1>
+    <h2 style="padding-left:16px">Admin Portal<br></h2>
+    <h3 style="padding-left:16px">User Managment: Edit User Information</h3>
+    <div class="topnav">
+        <a href="/home_redirect">Home</a>
+        <a class="active" href="#">User Managment</a><br>
+
+    </div>
+    <br><br>
+    <fieldset><legend>Update Employee</legend>
+        <form action="/update_emp_data" method="POST"  autocomplete="off">
+            {{range.}}
+      
+          <label for="ename"><b>Name of Employee</b></label>
+          <input type="text" placeholder="Enter Name of Employee" name="emp_name" id ="ename" value="{{.E_empname}}" required>
+          <br><br>
+          
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="emp_email" id="email" value="{{.E_empmail}}" required>
+          <br><br>
+
+          <label for="emp-id"><b>Employee ID</b></label>
+          <input type="text" placeholder="Enter Employee ID" name="emp_id" id="emp-id" value="{{.E_empid}}" readonly>
+          <br><br>
+
+          <label for="e_psw"><b>Password</b></label>
+          <input type="text" placeholder="Enter Password" name="emp_psw" id="e_psw" >
+          <!-- <input type="password" placeholder="Enter Password" name="emp_psw" id="e_psw" value="{{.E_emppass}}" required> -->
+          <br><br>
+      
+          <label for="table_id_emp"><b>ID</b></label>
+            <input type="text" placeholder="id"id="table_id_emp" name="table_id" value="{{.E_id}}" readonly >
+          </label>
+          <br><br>
+          
+            <button type="button" class="cancelbtn" onclick="location.href = '/home_redirect';">Cancel</button>
+            <button type="submit" class="updatebtn">Update Details</button>
+      {{end}}
+        </form>
+    </fieldset>
+    
+</body>
+</html>

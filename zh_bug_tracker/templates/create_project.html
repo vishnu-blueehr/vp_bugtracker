@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create project</title>
+
+    <link rel="icon" type="icon/x-icon" href="/src/images/bug.jpg">
+
+    <title>Bug Genie-Admin Home</title>
+
+    <style>
+        body {
+            background-image: url('/src/images/bug_genie_opac.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .topnav a {
+          float: left;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+        }
+
+        a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        .new_project {
+          background-color: #42526e;
+          color: white;
+          float: left;
+          color: #212a3a;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          border-color: #42526e;
+ 
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="text-align: center;">BUG Genie</h1>
+    <h2 style="padding-left:16px">Admin port</h2>
+    <div class="topnav">
+        <a href="/home_redirect">Home</a>
+        <a class="active" >Projects</a>
+        <a class="new_project" >New project</a>
+        <!-- <a href="/bug_list/?emp={{.Emp_id}}">Tickets</a> -->
+        <!-- <a href="/create_bug/?emp={{.Emp_id}}">Create Tickets</a> -->
+        <!-- <a href="#contact">Create Ticket</a> -->
+        <!-- <a href="#about">User Managment</a><br> -->
+    </div>
+    <!-- href="/create_project -->
+    <br<br<br>
+
+
+    <p>Please fill in this form to create a New project.</p>
+
+    <form action="/new_project" method="POST"  autocomplete="off">
+        <div class="container">
+          <!-- <hr> -->
+      
+          <label for="p_name"><b>Name of Project</b></label>
+          <input type="text" placeholder="Enter Name of Project" name="p_name" id ="p_name" required>
+          
+          <br><br>
+          <label for="p_key"><b>Key for Project</b></label>
+          <input type="text" placeholder="Enter key for Project" name="p_key" id="p_key" required>
+          
+          <br><br>
+          <label for="p_id"><b>Project ID</b></label>
+          <input type="text" placeholder="Enter Project ID" name="p_id" id="p_id" required>
+
+          <br><br>
+          <label for="p_type"><b>Type of Project</b></label>
+          <input type="text" placeholder="Enter Employee ID" name="p_type" id="p_type" value="company-managed-software" required>
+
+          <br><br>
+          <label for="p_lead"><b>Project Lead</b></label>
+          <input type="text" placeholder="Enter the emp_id of Lead" name="p_lead" id="p_lead" required>
+      
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" onclick="location.href='/home_redirect';">Cancel</button>
+            <button type="submit" class="signupbtn">Create</button>
+          </div>    
+        </div>
+      </form>
+
+
+</body>
+</html>
